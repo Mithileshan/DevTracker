@@ -1,0 +1,12 @@
+{
+  "buildCommand": "npm -w client run build",
+  "outputDirectory": "client/dist",
+  "framework": "vite",
+  "envPrefix": "VITE_",
+  "routes": [
+    {
+      "src": ".*",
+      "dest": "/index.html"
+    }
+  ]
+}
