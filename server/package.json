@@ -4,7 +4,7 @@
   "description": "Production-ready SaaS bug tracker backend",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc -b",
+    "build": "tsc -b && tsc-alias -p tsconfig.json",
     "clean": "tsc -b --clean",
     "start": "node dist/index.js",
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
@@ -45,6 +45,7 @@
     "@types/swagger-ui-express": "^4.1.6",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
+    "tsc-alias": "^1.8.16",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.3.3"
   }
