@@ -4,10 +4,11 @@
   "description": "Production-ready SaaS bug tracker backend",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc -b && tsc-alias -p tsconfig.json",
+    "build": "npm run build:shared && tsc && tsc-alias -p tsconfig.json",
+    "build:shared": "cd ../shared && npm run build && cd ../server",
     "clean": "tsc -b --clean",
     "start": "node dist/index.js",
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "dev": "ts-node-dev --respawn --transpile-only -r tsconfig-paths/register src/index.ts",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "lint": "eslint src --ext .ts",

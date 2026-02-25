@@ -8,7 +8,7 @@
     "build": "tsc -b",
     "build:clean": "tsc -b --clean",
     "build:watch": "tsc -b -w",
-    "dev": "concurrently \"npm -w server run dev\" \"npm -w client run dev\""
+    "dev": "concurrently \"npm -w shared run build:watch\" \"npm -w server run dev\" \"npm -w client run dev\""
   },
   "repository": {
     "type": "git",

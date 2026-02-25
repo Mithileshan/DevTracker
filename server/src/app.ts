@@ -3,7 +3,6 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
-import mongoSanitize from 'mongo-sanitize';
 import morgan from 'morgan';
 import swaggerUi from 'swagger-ui-express';
 import swaggerJsdoc from 'swagger-jsdoc';
@@ -76,9 +75,6 @@ export const createApp = (): Application => {
   app.use(express.json({ limit: '10kb' }));
   app.use(express.urlencoded({ limit: '10kb', extended: true }));
   app.use(cookieParser());
-
-  // Data sanitization  
-  app.use((mongoSanitize as any)());
 
   // Request logging
   app.use(

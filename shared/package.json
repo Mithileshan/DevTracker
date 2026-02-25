@@ -10,7 +10,8 @@
     "./schemas": "./dist/schemas.js"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "build:watch": "tsc -w"
   },
   "dependencies": {
     "zod": "^3.22.4"
