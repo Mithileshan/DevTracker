@@ -8,8 +8,8 @@
     "rootDir": "src",
     "resolveJsonModule": true,
     "sourceMap": true,
-    "module": "Node16",
-    "moduleResolution": "node16"
+    "module": "ESNext",
+    "moduleResolution": "bundler"
   },
   "include": ["src"]
 }

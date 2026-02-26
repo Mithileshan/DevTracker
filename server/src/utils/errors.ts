@@ -60,3 +60,17 @@ export class InternalServerError extends AppError {
     Object.setPrototypeOf(this, InternalServerError.prototype);
   }
 }
+
+// ============ Validation Helper ============
+import { z } from 'zod';
+
+export function validateRequest<T>(data: unknown, schema: z.ZodSchema<T>): T {
+  try {
+    return schema.parse(data);
+  } catch (error: any) {
+    if (error instanceof z.ZodError) {
+      throw new ValidationError('Validation failed', error.errors);
+    }
+    throw error;
+  }
+}

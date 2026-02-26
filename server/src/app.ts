@@ -17,6 +17,7 @@ import projectRoutes from '@/routes/projects';
 import ticketRoutes from '@/routes/tickets';
 import commentRoutes from '@/routes/comments';
 import notificationRoutes from '@/routes/notifications';
+import inviteRoutes from '@/routes/invites';
 
 // Swagger configuration
 const swaggerOptions = {
@@ -96,6 +97,8 @@ export const createApp = (): Application => {
   // API Routes
   app.use('/api/auth', authRoutes);
   app.use('/api/orgs', orgRoutes);
+  app.use('/api/orgs', inviteRoutes); // Invite routes share /api/orgs prefix
+  app.use('/api/invites', inviteRoutes); // Also support /api/invites for verify/accept
   app.use('/api/orgs/:orgId/projects', projectRoutes);
   app.use('/api/orgs/:orgId/projects/:projectId/tickets', ticketRoutes);
   app.use('/api/tickets/:ticketId/comments', commentRoutes);

@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useCallback, useReducer } from 'react';
 import { IUserPublic } from '@shared/types';
 
-interface AuthContextType {
+export interface AuthContextType {
   user: IUserPublic | null;
   isAuthenticated: boolean;
   login: (user: IUserPublic, accessToken: string) => void;
