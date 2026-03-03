@@ -1,97 +1,7 @@
-# DevTracker X - Production-Ready SaaS Bug Tracker
+# DevTracker
 
 A minimal, high-end, portfolio-grade, multi-tenant bug/ticket tracker built with Node.js, Express, TypeScript, MongoDB, React, and Vite.
 
-## Features
-
-✅ **Multi-Tenant Architecture** - Organizations, Projects with tenant isolation  
-✅ **Advanced RBAC** - Role-based access control with centralized permission mapping  
-✅ **Smart Tickets** - Full CRUD with advanced filters, pagination, sorting  
-✅ **Comments & Notifications** - Ticket comments with @ mentions and in-app notifications  
-✅ **Audit Logs** - Track all important actions for compliance  
-✅ **Production Security** - Helmet, CORS, rate limiting, mongo-sanitize  
-✅ **Swagger Docs** - Auto-generated OpenAPI documentation at `/api/docs`  
-✅ **JWT Auth** - Access + Refresh tokens with HttpOnly cookies  
-✅ **Modern Frontend** - React 18, TypeScript, Vite, Tailwind CSS, React Query  
-✅ **Database** - MongoDB with Mongoose, proper indexes  
-
----
-
-## Project Structure
-
-```
-devtracker-x/
-├── server/                # Express + TypeScript backend
-│   ├── src/
-│   │   ├── config/        # Database, logger, auth config
-│   │   ├── controllers/   # Request handlers
-│   │   ├── services/      # Business logic
-│   │   ├── repositories/  # Database queries
-│   │   ├── models/        # Mongoose schemas
-│   │   ├── routes/        # API endpoints
-│   │   ├── middleware/    # Auth, error handling
-│   │   ├── utils/         # JWT, password hashing, RBAC, errors
-│   │   ├── scripts/       # Database seed
-│   │   ├── app.ts         # Express app setup
-│   │   └── index.ts       # Server entry point
-│   ├── package.json
-│   ├── tsconfig.json
-│   └── .env.example
-├── client/                # React + Vite frontend
-│   ├── src/
-│   │   ├── components/    # React components
-│   │   ├── pages/         # Page components
-│   │   ├── hooks/         # Custom hooks (React Query)
-│   │   ├── context/       # Auth context
-│   │   ├── lib/           # API client, query client
-│   │   ├── App.tsx        # Main app
-│   │   └── main.tsx       # Entry point
-│   ├── package.json
-│   ├── vite.config.ts
-│   ├── tailwind.config.js
-│   └── index.html
-├── shared/                # Shared types & schemas
-│   ├── src/
-│   │   ├── types.ts       # TypeScript interfaces
-│   │   ├── schemas.ts     # Zod validation schemas
-│   │   └── index.ts
-│   ├── package.json
-│   └── tsconfig.json
-└── README.md
-```
-
----
-
-## Tech Stack
-
-### Backend
-- **Runtime**: Node.js 20 LTS
-- **Framework**: Express.js + TypeScript
-- **Database**: MongoDB Atlas + Mongoose
-- **Validation**: Zod
-- **Auth**: JWT (access + refresh tokens)
-- **Security**: Helmet, CORS, rate-limit, mongo-sanitize
-- **Logging**: Winston + Morgan
-- **Docs**: Swagger/OpenAPI
-- **Testing**: Jest + Supertest
-
-### Frontend
-- **React**: 18.2.0
-- **TypeScript**: 5.3.3
-- **Build Tool**: Vite
-- **Routing**: React Router v6
-- **Data Fetching**: @tanstack/react-query
-- **Forms**: React Hook Form + Zod resolver
-- **Styling**: Tailwind CSS
-- **UI**: Custom components + Tailwind
-- **Notifications**: React Hot Toast
-- **Charts**: Recharts (optional)
-
-### Shared
-- **Validation**: Zod schemas
-- **Types**: Full TypeScript support across FE/BE
-
----
 
 ## Setup Instructions
 
@@ -255,30 +165,6 @@ permissionMap = {
 }
 ```
 
-### Database Design
-- Proper indexes on common queries (orgId, projectId, assigneeId)
-- Soft deletes for tickets
-- Indexed audit logs for compliance
-- Pagination + filtering on all list endpoints
-
----
-
-## Frontend Pages (Implemented)
-
-- ✅ **Login/Register** - Auth pages with validation
-- ✅ **Dashboard** - List user's organizations
-- ✅ **Projects** - List organization projects
-- ✅ **Tickets** - List project tickets (scaffolding in place)
-- ✅ **Ticket Detail** - Ticket view/edit (scaffolding in place)
-- ✅ **Navbar** - Navigation with notifications
-
-### Ready to Enhance
-- Add ticket table with filters/sorting/pagination
-- Implement ticket detail view with comments
-- Add notification dropdown
-- Add user/org/project management UI
-- Add advanced analytics dashboard with Recharts
-
 ---
 
 ## Git Workflow
@@ -343,21 +229,6 @@ npm run test:api
 
 ---
 
-## Next Steps & TODOs
-
-- [ ] Implement full ticket table UI with filters
-- [ ] Add ticket detail page with comments
-- [ ] Implement notifications dropdown
-- [ ] Add user profile page
-- [ ] Add organization/project settings
-- [ ] Add analytics dashboard (Recharts)
-- [ ] Add email notifications (optional)
-- [ ] Add advanced search with Elasticsearch
-- [ ] Add real-time updates with Socket.io (optional)
-- [ ] Add Kanban board view (optional)
-- [ ] Add testing coverage
-
----
 
 ## Troubleshooting
 
@@ -380,27 +251,8 @@ npm run test:api
 - Run `npm install` again
 - Check Node version is 20+
 
----
+---.
 
-## Support
-
-For issues or questions:
-1. Check the API docs at `/api/docs`
-2. Review error messages in server logs
-3. Check browser console for frontend issues
-4. Verify environment variables are set
-
----
-
-## License
-
-MIT - Free to use for portfolio/commercial projects.
-
----
-
-## Author
-
-Built with ❤️ as a production-ready SaaS template.
 
 
 
